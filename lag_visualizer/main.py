@@ -24,7 +24,7 @@ import click
 @click.option('--slot', help='Replication slot name')
 @click.option('--frequency', default=1, help='lag data collection query frequency in seconds, default: 1s')
 @click.option('--unit', default="mb", help='Y-axis unit type possible values are: b,kb,mb,gb , default: mb')
-@click.option('--mode', default="web", help='CLI mode or web , default: mb')
+@click.option('--mode', default="web", help='CLI mode/web/matplotlib , default: mb')
 def arg_parser(host, port, user, password, database, slot, frequency, unit, mode):
     """Parse the postgres connectivity configurations"""
     args = {
