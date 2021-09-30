@@ -1,6 +1,6 @@
 # Replication-Lag-Visualizer
 
-A simple cli as well as Web based tool to visualize the replication lag in realtime.
+A simple cli based tool to visualize the replication lag in realtime.
 
 ## Supported Database:
 - Postgres

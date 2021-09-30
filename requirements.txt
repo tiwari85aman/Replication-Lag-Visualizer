@@ -1,2 +1,4 @@
 matplotlib==3.4.3
 pg8000==1.21.2
+flask==2.0.1
+APScheduler==3.7.0
