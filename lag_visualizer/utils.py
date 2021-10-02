@@ -9,8 +9,11 @@ class MetaInfo:
             "b": 1,
         }
         self.lag_query = {
-            "10": """""",
-            "9": """SELECT pg_current_xlog_insert_location() as current_lsn, slot_name,restart_lsn, 
+            "100000": """SELECT pg_current_wal_lsn() as current_lsn, slot_name,restart_lsn, 
+                round((pg_current_wal_lsn()-restart_lsn) / :factor , 2) AS GB_behind 
+                FROM pg_replication_slots where slot_name=:slot;
+            """,
+            "90600": """SELECT pg_current_xlog_insert_location() as current_lsn, slot_name,restart_lsn, 
                 round((pg_current_xlog_insert_location()-restart_lsn) / :factor , 2) AS GB_behind 
                 FROM pg_replication_slots where slot_name=:slot;"""
         }
